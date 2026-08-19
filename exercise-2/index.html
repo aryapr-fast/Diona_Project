@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 — Medical & Travel Expense Request</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen Demo Controls (Excluded from print) -->
+  <div class="demo-controls no-print">
+    <label for="dataset-select">Dataset:</label>
+    <select id="dataset-select" onchange="switchDataset(this.value)">
+      <option value="reference">Reference Dataset (PDF Sample)</option>
+      <option value="minimal">Minimal Dataset</option>
+      <option value="large">Large Dataset</option>
+    </select>
+    <button onclick="printDocument()">Print / Save as PDF</button>
+    <a href="../exercise-1/index.html" class="nav-link">← Go to Exercise 1</a>
+  </div>
+
+  <!-- Main Render Target -->
+  <div id="document-app"></div>
+
+  <!-- Scripts -->
+  <script src="../shared/common.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

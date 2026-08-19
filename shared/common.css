@@ -1,0 +1,314 @@
+/* Shared Styles for WCB Document Recreation */
+
+:root {
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --wcb-blue: #1e4d73;
+  --border-color: #000000;
+  --text-main: #000000;
+  --bg-page: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #e5e7eb;
+  color: var(--text-main);
+  line-height: 1.35;
+  font-size: 13px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Demo Control Panel (Screen only) */
+.demo-controls {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-sans);
+}
+
+.demo-controls label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.demo-controls select {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #4b5563;
+  background-color: #374151;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.demo-controls button {
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  border: none;
+  background-color: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.demo-controls button:hover {
+  background-color: #1d4ed8;
+}
+
+.demo-controls .nav-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.demo-controls .nav-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Page Container (Letter dimensions) */
+.document-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  gap: 24px;
+}
+
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.5in 0.5in 0.6in 0.5in;
+  background-color: var(--bg-page);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Common Document Header */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.header-logo-col {
+  width: 220px;
+}
+
+.header-logo-col img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.header-address-col {
+  font-size: 11.5px;
+  color: #222222;
+  line-height: 1.3;
+}
+
+.header-title-col {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.doc-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.claim-box-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.claim-box {
+  border: 1px solid var(--border-color);
+  padding: 4px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.code-box {
+  border: 1px solid var(--border-color);
+  padding: 4px 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Subtitle Worker Intro */
+.worker-intro {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  margin-bottom: 18px;
+  color: #000000;
+}
+
+.worker-name-blue {
+  color: var(--wcb-blue);
+}
+
+.dynamic-blue {
+  color: var(--wcb-blue);
+  font-family: var(--font-serif);
+}
+
+/* Controlled Visual Checkbox Component */
+.pdf-checkbox {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 8px;
+  margin-top: 1px;
+  vertical-align: top;
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.pdf-checkbox.checked::after {
+  content: "";
+  position: absolute;
+  left: 2.5px;
+  top: -0.5px;
+  width: 4px;
+  height: 8px;
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(42deg);
+  -webkit-transform: rotate(42deg);
+  box-sizing: border-box;
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+/* Footer Component — Pinned to Physical Bottom of Sheet */
+.doc-footer {
+  position: absolute;
+  left: 0.5in;
+  right: 0.5in;
+  bottom: 0.28in;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 11.5px;
+  color: #000000;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.page-num {
+  font-size: 11.5px;
+  margin-top: 2px;
+}
+
+/* Optimized Print Pagination & Page Break Rules */
+@media print {
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+
+  html, body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .document-container {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    display: block;
+  }
+
+  .page {
+    box-shadow: none;
+    margin: 0;
+    width: 8.5in;
+    height: 11in;
+    min-height: 11in;
+    max-height: 11in;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding: 0.5in 0.5in 0.6in 0.5in;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .doc-footer {
+    position: absolute;
+    left: 0.5in;
+    right: 0.5in;
+    bottom: 0.28in;
+  }
+
+  /* Prevent awkward mid-section splitting */
+  .form-box,
+  .response-box,
+  .pain-scale-container,
+  .field-row,
+  .certification-block,
+  .doc-header,
+  .doc-footer,
+  .table-section-title,
+  .expense-table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
