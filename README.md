@@ -31,6 +31,9 @@ wcb-document-recreation/
 ├── README.md                           # Main Project Documentation
 ├── .gitignore                          # Clean repository rules
 │
+├── diona_exercise_1.mp4                 # Demonstration Video for Exercise 1
+├── diona_exercise_2.mp4                 # Demonstration Video for Exercise 2
+│
 ├── exercise-1/                         # Exercise 1: Worker Progress Report
 │   ├── index.html                      # DOM Mount Point & Demo Toolbar
 │   ├── style.css                       # Exercise 1 Specific Form & Underline Styling
@@ -59,14 +62,9 @@ wcb-document-recreation/
 │   ├── challenges.md                   # Technical Challenges & Solutions
 │   └── testing.md                      # Testing Suite & Verification Matrix
 │
-├── ai/                                 # AI Transparency Documentation
-│   └── prompt-history.md               # Prompt History & AI Usage Log
-│
-└── videos/                             # Video Presentation Assets
-    ├── exercise-1-video-script.md      # 2-Min Narrated Video Script for Exercise 1
-    ├── exercise-2-video-script.md      # 2-Min Narrated Video Script for Exercise 2
-    ├── exercise-1-video-link.md        # Recorded Video Link / Path for Exercise 1
-    └── exercise-2-video-link.md        # Recorded Video Link / Path for Exercise 2
+└── ai/                                 # AI Transparency Documentation
+    └── prompt-history.md               # Prompt History & AI Usage Log
+```
 ```
 
 ---
@@ -120,8 +118,17 @@ Both documents are optimized for browser printing (`Ctrl + P` or clicking the **
 
 ## 🎥 Video Demonstrations
 
-Narrated Picture-in-Picture (PiP) video presentations (~2 minutes each):
-* **Exercise 1 Script**: [`videos/exercise-1-video-script.md`](file:///c:/Users/Arya%20P%20R/Desktop/Diona%20Assignment/videos/exercise-1-video-script.md)
-* **Exercise 1 Video Link**: [`videos/exercise-1-video-link.md`](file:///c:/Users/Arya%20P%20R/Desktop/Diona%20Assignment/videos/exercise-1-video-link.md)
-* **Exercise 2 Script**: [`videos/exercise-2-video-script.md`](file:///c:/Users/Arya%20P%20R/Desktop/Diona%20Assignment/videos/exercise-2-video-script.md)
-* **Exercise 2 Video Link**: [`videos/exercise-2-video-link.md`](file:///c:/Users/Arya%20P%20R/Desktop/Diona%20Assignment/videos/exercise-2-video-link.md)
+Narrated video presentations demonstrating dynamic rendering and print capabilities:
+
+### 1. Exercise 1 — Worker Progress Report
+<video src="diona_exercise_1.mp4" controls width="100%"></video>
+
+* 🎬 **Video File**: [`diona_exercise_1.mp4`](file:///c:/Users/Arya%20P%20R/Desktop/Diona%20Assignment/diona_exercise_1.mp4)
+
+---
+
+### 2. Exercise 2 — Medical & Travel Expense Request
+<video src="diona_exercise_2.mp4" controls width="100%"></video>
+
+* 🎬 **Video File**: [`diona_exercise_2.mp4`](file:///c:/Users/Arya%20P%20R/Desktop/Diona%20Assignment/diona_exercise_2.mp4)
+

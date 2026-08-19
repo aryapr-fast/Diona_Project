@@ -155,7 +155,7 @@ function renderPage1(data) {
  * Contains Pain Rating scale (1-10), Medical Treatment, Medication, Home Exercises, and Other Information.
  * @param {Object} data - Structured dataset object containing medical and treatment details.
  * @returns {string} HTML string for Page 2.
- */
+ 
 function renderPage2(data) {
   const med = data.medicalTreatment || {};
   const rx = data.medication || {};

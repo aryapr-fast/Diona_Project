@@ -1,6 +1,4 @@
-/**
- * Data Models for Exercise 1 — Worker Progress Report
- */
+
 
 const workerDatasets = {
   reference: {
@@ -11,9 +9,9 @@ const workerDatasets = {
     submittedAt: "March 19, 2024 19:21",
 
     returnToWork: {
-      status: "returned", // "not_missed" | "not_returned" | "returned"
+      status: "returned", 
       returnDate: "March 15, 2024",
-      workingStatus: "modified_reduced_hours", // "full_regular" | "full_reduced" | "modified_regular" | "modified_reduced_hours"
+      workingStatus: "modified_reduced_hours", 
       otherStatus: "",
       progress: "Terrible. Testing Testing",
       expectedReturnDate: "",
@@ -23,14 +21,14 @@ const workerDatasets = {
     },
 
     recovery: {
-      status: "fully", // "not_fully" | "fully"
+      status: "fully", 
       comments: ""
     },
 
-    painScore: null, // 1 to 10 or null
+    painScore: null, 
 
     medicalTreatment: {
-      status: null, // "not_continuing" | "continuing"
+      status: null, // 
       providerType: "",
       lastTreatmentDate: "",
       lastProviderName: "",
@@ -40,12 +38,12 @@ const workerDatasets = {
     },
 
     medication: {
-      status: null, // "not_taking" | "taking"
+      status: null, 
       prescribedName: ""
     },
 
     homeExercises: {
-      status: null, // "not_doing" | "doing"
+      status: null, 
       details: ""
     },
 
