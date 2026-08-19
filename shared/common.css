@@ -23,64 +23,133 @@ body {
   font-size: 13px;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Demo Control Panel (Screen only) */
+/* Professional Demo Control Panel (Screen only) */
 .demo-controls {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #1f2937;
-  color: #ffffff;
-  padding: 12px 24px;
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  font-family: var(--font-sans);
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-bottom: 1px solid #1e293b;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #38bdf8;
+  letter-spacing: -0.2px;
+}
+
+.brand-badge svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .demo-controls label {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
+  color: #94a3b8;
 }
 
 .demo-controls select {
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid #4b5563;
-  background-color: #374151;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.demo-controls button {
-  padding: 6px 16px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  border: none;
-  background-color: #2563eb;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.demo-controls button:hover {
-  background-color: #1d4ed8;
-}
-
-.demo-controls .nav-link {
-  color: #9ca3af;
-  text-decoration: none;
+  padding: 7px 14px;
   font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #f8fafc;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.demo-controls select:hover {
+  border-color: #475569;
+  background-color: #334155;
+}
+
+.demo-controls select:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.25);
+}
+
+.btn-print {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background-color: #0284c7;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-print:hover {
+  background-color: #0369a1;
+  transform: translateY(-1px);
+}
+
+.btn-print:active {
+  transform: translateY(0);
+}
+
+.btn-print svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-left: auto;
 }
 
-.demo-controls .nav-link:hover {
+.nav-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
   color: #ffffff;
-  text-decoration: underline;
+  background-color: #1e293b;
+}
+
+.nav-link.active {
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.1);
+  font-weight: 600;
 }
 
 /* Page Container (Letter dimensions) */
@@ -88,16 +157,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 0;
-  gap: 24px;
+  padding: 28px 0;
+  gap: 28px;
 }
 
 .page {
   width: 8.5in;
   min-height: 11in;
-  padding: 0.5in 0.5in 0.6in 0.5in;
+  padding: 0.5in 0.5in 0.7in 0.5in;
   background-color: var(--bg-page);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   position: relative;
   box-sizing: border-box;
 }

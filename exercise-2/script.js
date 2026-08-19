@@ -1,8 +1,17 @@
 /**
- * JavaScript Rendering Engine for Exercise 2 — Medical & Travel Expense Request
+ * @file script.js
+ * @description Dynamic Table & Document Rendering Engine for Exercise 2 — Medical & Travel Expense Request.
+ *              Generates a pixel-accurate 2-page WCB Manitoba expense reimbursement request form using dynamic array rendering.
+ * @module Exercise2/RenderEngine
  */
 
-// Generic Table Generator
+/**
+ * Generic reusable HTML table builder with automatic dynamic array iteration and empty state fallback.
+ * @param {string[]} headers - Array of table header column names.
+ * @param {Array<Object>} rowsData - Array of data objects for table rows.
+ * @param {Function} mapRowFn - Callback function mapping a single item to an array of cell values.
+ * @returns {string} HTML string representing the complete <table> structure.
+ */
 function renderTable(headers, rowsData, mapRowFn) {
   const headerCellsHtml = headers.map(h => `<th>${escapeHtml(h)}</th>`).join("");
 
@@ -34,7 +43,12 @@ function renderTable(headers, rowsData, mapRowFn) {
   `;
 }
 
-// Page 1 Rendering
+/**
+ * Renders Page 1 of the Medical & Travel Expense Request document.
+ * Includes Header, Prescription Drugs, OTC Drugs, Medical Supplies, Parking, and Mileage tables.
+ * @param {Object} data - Structured dataset object containing expense categories.
+ * @returns {string} HTML string for Page 1.
+ */
 function renderExpensePage1(data) {
   return `
     <section class="page" id="page-1">
@@ -98,7 +112,12 @@ function renderExpensePage1(data) {
   `;
 }
 
-// Page 2 Rendering
+/**
+ * Renders Page 2 of the Medical & Travel Expense Request document.
+ * Includes Bus/Taxi Fare table, Pre-approval disclaimer, Privacy Notice acknowledgment, and Footer.
+ * @param {Object} data - Structured dataset object.
+ * @returns {string} HTML string for Page 2.
+ */
 function renderExpensePage2(data) {
   return `
     <section class="page" id="page-2">
@@ -130,7 +149,10 @@ function renderExpensePage2(data) {
   `;
 }
 
-// Main Render Function
+/**
+ * Main application renderer. Mounts pages 1 and 2 into the DOM target.
+ * @param {string} [datasetKey="reference"] - Key of dataset to load ("reference", "minimal", "large").
+ */
 function renderApp(datasetKey = "reference") {
   const data = expenseDatasets[datasetKey] || expenseDatasets.reference;
   const container = document.getElementById("document-app");
@@ -144,12 +166,15 @@ function renderApp(datasetKey = "reference") {
   `;
 }
 
-// Switch Dataset Handler
+/**
+ * Dataset selector event handler. Re-renders document upon user selection.
+ * @param {string} key - Selected dataset key.
+ */
 function switchDataset(key) {
   renderApp(key);
 }
 
-// Initial Render
+// Initial application bootstrap on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   renderApp("reference");
 });

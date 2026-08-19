@@ -1,8 +1,17 @@
 /**
- * JavaScript Rendering Engine for Exercise 1 — Worker Progress Report
+ * @file script.js
+ * @description Dynamic Document Rendering Engine for Exercise 1 — Worker Progress Report.
+ *              Assembles a pixel-accurate, 3-page printable WCB Manitoba form driven by JavaScript data models.
+ * @module Exercise1/RenderEngine
  */
 
-// Helper to construct underlined form field line with sublabel
+/**
+ * Renders an underlined inline form field with an optional sublabel centered beneath the line.
+ * @param {string} value - Dynamic value to display above the underline.
+ * @param {string} [sublabel=""] - Descriptive sublabel text (e.g. "Date", "(Medical Provider Name)").
+ * @param {string} [widthClass=""] - Optional CSS width modifier class ("short", "long", "full").
+ * @returns {string} HTML markup for the underlined field component.
+ */
 function renderUnderlineField(value, sublabel = "", widthClass = "") {
   return `
     <span class="underline-wrapper">
@@ -12,7 +21,12 @@ function renderUnderlineField(value, sublabel = "", widthClass = "") {
   `;
 }
 
-// Render Page 1
+/**
+ * Renders Page 1 of the Worker Progress Report.
+ * Contains WCB Header, Worker Introduction, Return to Work section, and Recovery section.
+ * @param {Object} data - Structured dataset object containing worker claim updates.
+ * @returns {string} HTML string for Page 1.
+ */
 function renderPage1(data) {
   const rtw = data.returnToWork || {};
   const rec = data.recovery || {};
@@ -136,7 +150,12 @@ function renderPage1(data) {
   `;
 }
 
-// Render Page 2
+/**
+ * Renders Page 2 of the Worker Progress Report.
+ * Contains Pain Rating scale (1-10), Medical Treatment, Medication, Home Exercises, and Other Information.
+ * @param {Object} data - Structured dataset object containing medical and treatment details.
+ * @returns {string} HTML string for Page 2.
+ */
 function renderPage2(data) {
   const med = data.medicalTreatment || {};
   const rx = data.medication || {};
@@ -253,14 +272,19 @@ function renderPage2(data) {
   `;
 }
 
-// Render Page 3
+/**
+ * Renders Page 3 of the Worker Progress Report.
+ * Contains Certification statements, Privacy Notice acknowledgment, and intentional whitespace.
+ * @param {Object} data - Structured dataset object.
+ * @returns {string} HTML string for Page 3.
+ */
 function renderPage3(data) {
   const certs = data.certifications || {};
 
   return `
     <section class="page" id="page-3">
       <div>
-        <div class="certification-block" style="margin-top: 40px;">
+        <div class="certification-block" style="margin-top: 36px;">
           <div class="cert-item">
             ${renderCheckbox(certs.infoTrue !== false)}
             <span>
@@ -288,7 +312,10 @@ function renderPage3(data) {
   `;
 }
 
-// Main Render Function
+/**
+ * Main application renderer. mounts pages 1, 2, and 3 into the DOM target.
+ * @param {string} [datasetKey="reference"] - Key of the dataset to load ("reference", "minimal", "large").
+ */
 function renderApp(datasetKey = "reference") {
   const data = workerDatasets[datasetKey] || workerDatasets.reference;
   const container = document.getElementById("document-app");
@@ -303,12 +330,15 @@ function renderApp(datasetKey = "reference") {
   `;
 }
 
-// Switch Dataset handler
+/**
+ * Dataset selector event handler. Re-renders document upon user selection.
+ * @param {string} key - Selected dataset key.
+ */
 function switchDataset(key) {
   renderApp(key);
 }
 
-// Initial render on page load
+// Initial application bootstrap on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   renderApp("reference");
 });
